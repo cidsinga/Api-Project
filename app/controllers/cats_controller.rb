@@ -1,13 +1,16 @@
 class CatsController < ApplicationController
 
   def index
+    if params[:kid_friendly]
+      kid_friendly = params[:kid_friendly]
+      @cats = Cat.kid_friendly(kid_friendly)
+    end
     @cats = Cat.all
     name = params[:name]
     color = params[:color]
-    kid_friendly = params[:kid_friendly]
     age = params[:age]
     # @cats = Cat.search(color)
-    @kid_friendly = Cat.kid_friendly
+    @kid_friendly = Cat.kid_ok
     @most_recent = Cat.most_recent
     @age = Cat.age
     @random = Cat.random
