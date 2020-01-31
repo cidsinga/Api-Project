@@ -7,6 +7,8 @@ class CatsController < ApplicationController
     kid_friendly = params[:kid_friendly]
     age = params[:age]
     # @cats = Cat.search(color)
+    @kid_friendly = Cat.kid_friendly
+    @most_recent = Dog.most_recent
     json_response(@cats)
   end
 
