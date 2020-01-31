@@ -6,7 +6,7 @@ class CatsController < ApplicationController
     color = params[:color]
     kid_friendly = params[:kid_friendly]
     age = params[:age]
-    @cats = Cat.search(color)
+    # @cats = Cat.search(color)
     json_response(@cats)
   end
 
