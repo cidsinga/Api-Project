@@ -36,6 +36,10 @@ class CatsController < ApplicationController
 
   private
 
+  def cat_params
+    params.permit(:id, :name, :color, :kid_friendly, :age)
+  end
+
   def json_response(object, status = :ok)
     render json: object, status: status
   end
