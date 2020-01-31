@@ -33,7 +33,6 @@ class CatsController < ApplicationController
     @cat.destroy
   end
 
-
   private
 
   def cat_params
