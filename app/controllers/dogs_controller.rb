@@ -9,6 +9,9 @@ class DogsController < ApplicationController
     # @dogs = Dog.search(params[:name])
     @kid_friendly = Dog.kid_friendly
     @most_recent = Dog.most_recent
+    @age = Dog.age
+    @random = Dog.random
+
     json_response(@dogs)
   end
 
