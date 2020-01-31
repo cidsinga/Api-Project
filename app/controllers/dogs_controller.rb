@@ -1,4 +1,4 @@
-class DogsController < ApplidogionController
+class DogsController < ApplicationController
 
   def index
     name = params[:name]
@@ -39,9 +39,5 @@ class DogsController < ApplidogionController
   def dog_params
     params.permit(:id, :name, :color, :kid_friendly, :age)
   end
-  
 
-  # def json_response(object, status = :ok)
-  #   render json: object, status: status
-  # end
 end

@@ -25,6 +25,27 @@ class Seed
   end
   Seed.begin
 
+  class Seed
+    def self.begin
+      seed = Seed.new
+      seed.generate_dogs
+    end
+
+    def generate_dogs
+      rand(15..35).times do |i|
+        dog = Dog.create!(
+          name: Faker::Games::Pokemon.name,
+          color: Faker::Color.color_name,
+          kid_friendly: Faker::Boolean.boolean(true_ratio: 0.5),
+          age: Faker::Number.between(from: 1, to: 15)
+          )
+          puts "Created #{Dog.count} Dogs."
+        end
+      end
+    end
+    Seed.begin
+
+
 # def generate_dogs
 #   rand(15..35).times do
 #     dogs = []
