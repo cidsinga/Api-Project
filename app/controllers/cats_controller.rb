@@ -1,11 +1,12 @@
 class CatsController < ApplicationController
 
   def index
+    @cats = Cat.all
     name = params[:name]
     color = params[:color]
     kid_friendly = params[:kid_friendly]
     age = params[:age]
-    @cats = Cat.all
+    @cats = Cat.search(color)
     json_response(@cats)
   end
 

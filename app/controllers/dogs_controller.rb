@@ -1,11 +1,12 @@
 class DogsController < ApplicationController
 
   def index
+    @dogs = Dog.all
     name = params[:name]
     color = params[:color]
     kid_friendly = params[:kid_friendly]
     age = params[:age]
-    @dogs = Dog.all
+        @dogs = Dog.search(color)
     json_response(@dogs)
   end
 
